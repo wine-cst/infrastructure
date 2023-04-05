@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: simple-http-server-argo-declarative
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/wine-cst/infrastructure
+    targetRevision: main
+    path: yaml-manifests
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: simple-http-server-argo-declarative
+  syncPolicy:
+  automated: {}
+  syncOptions:
+  - CreateNamespace=true
