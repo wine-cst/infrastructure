@@ -13,6 +13,6 @@ spec:
     server: https://kubernetes.default.svc
     namespace: simple-http-server-argo-declarative
   syncPolicy:
-  automated: {}
-  syncOptions:
-  - CreateNamespace=true
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
